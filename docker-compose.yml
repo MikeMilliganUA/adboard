@@ -1,0 +1,17 @@
+version: '3.8'
+
+services:
+  pg_db:
+    image: postgres:12
+    ports:
+      - "8012:5432"
+    volumes:
+      - pg_db_volume:/var/lib/postgresql/data
+    environment:
+      - POSTGRES_DB=ad_board
+      - POSTGRES_USER=wizard
+      - POSTGRES_PASSWORD=123456
+
+volumes:
+  pg_db_volume:
+    driver: local
